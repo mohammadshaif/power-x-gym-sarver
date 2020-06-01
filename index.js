@@ -56,13 +56,13 @@ app.get('/classes',  (req, res) => {
 
 
 
-app.post('/addClasses', (req , res) =>{
+app.post('/addPricing', (req , res) =>{
   const orderDetails = req.body;
   orderDetails.orderTime = new Date();
   console.log(orderDetails);
   client = new MongoClient(uri, { useNewUrlParser: true });
   client.connect(err => {
-    const collection = client.db("powerGym").collection("Classes");
+    const collection = client.db("powerGym").collection("pricing");
     collection.insert(orderDetails,(err, result)=>{
       if (err) {
         //console.log(err); 
