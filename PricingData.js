@@ -1,0 +1,40 @@
+const Pricing = [
+    { subTitle:'BILLED MONTHLY',
+      title:'ADVANCE PLAN',
+      priceId:'1',
+      bgImg:'https://i.ibb.co/yY8Nd8N/hipcravo-5-Ub-Iq-V58-CW8-unsplash.jpg',
+      price:'140',
+      item1:'Mobile-Optimized',
+      item1:'Best Hosting',
+      item1:'Free Custom',
+      item1:'Outstanding',
+      item1:'Happy Customers',
+    },
+    { subTitle:'BILLED MONTHLY',
+      title:'BASIC PLAN',
+      priceId:'2',
+      bgImg:'https://i.ibb.co/ZgySK4c/daniel-apodaca-Wdo-Qio6-HPVA-unsplash.jpg',
+      price:'120',
+      item1:'Mobile-Optimized',
+      item1:'Best Hosting',
+      item1:'Free Custom',
+      item1:'Outstanding',
+      item1:'Happy Customers',
+    },
+    { subTitle:'BILLED MONTHLY',
+      title:'BEGINNERS',
+      priceId:'3',
+      bgImg:'https://i.ibb.co/n7KPb5s/penguinuhh-8-VI6-Ww-EEEHw-unsplash.jpg',
+      price:'90',
+      item1:'Mobile-Optimized',
+      item1:'Best Hosting',
+      item1:'Free Custom',
+      item1:'Outstanding',
+      item1:'Happy Customers',
+    },
+    
+   
+  ]
+  
+ 
+  export default Pricing;
