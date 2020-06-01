@@ -53,17 +53,33 @@ app.get('/classes',  (req, res) => {
     })
   
 
+    app.get('/member',  (req, res) => {
+      client = new MongoClient(uri, { useNewUrlParser: true });
+          const product = req.body;
+          client.connect(err => {
+          const collection = client.db("powerGym").collection("member");
+          collection.find().toArray ((err, documents)=>{
+            if (err) {
+              console.log(err); 
+              res.status(500).send({massage:err});
+            }else{
+              res.send(documents);
+            }
+            
+          }); 
+          client.close();
+        });
+      })
 
 
-
-app.post('/addPricing', (req , res) =>{
+app.post('/addMember', (req , res) =>{
   const orderDetails = req.body;
   orderDetails.orderTime = new Date();
   console.log(orderDetails);
   client = new MongoClient(uri, { useNewUrlParser: true });
   client.connect(err => {
-    const collection = client.db("powerGym").collection("pricing");
-    collection.insert(orderDetails,(err, result)=>{
+    const collection = client.db("powerGym").collection("member");
+    collection.insertOne(orderDetails,(err, result)=>{
       if (err) {
         //console.log(err); 
         res.status(500).send({massage:err});
