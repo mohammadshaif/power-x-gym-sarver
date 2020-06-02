@@ -33,6 +33,28 @@ app.get('/classes',  (req, res) => {
     });
   })
 
+
+  app.get('/classes/:id', (req,res)=>{
+    const key = req.params.key;
+    
+    client = new MongoClient(uri, { useNewUrlParser: true });
+    const product = req.body;
+    client.connect(err => {
+    const collection = client.db("powerGym").collection("Classes");
+    collection.find({key}).toArray ((err, documents)=>{
+      if (err) {
+        console.log(err); 
+        res.status(500).send({massage:err});
+      }
+      else{
+        res.send(documents[0]);
+      }
+      
+    }); 
+    client.close();
+  });
+})
+
  
   app.get('/pricing',  (req, res) => {
     client = new MongoClient(uri, { useNewUrlParser: true });
