@@ -34,14 +34,14 @@ app.get('/classes',  (req, res) => {
   })
 
 
-  app.get('/classes/:id', (req,res)=>{
-    const key = req.params.id;
+  app.get('/classes/:_id', (req,res)=>{
+    const id = req.params._id;
     
     client = new MongoClient(uri, { useNewUrlParser: true });
     const product = req.body;
     client.connect(err => {
     const collection = client.db("powerGym").collection("Classes");
-    collection.find({key}).toArray ((err, documents)=>{
+    collection.find({id}).toArray ((err, documents)=>{
       if (err) {
         console.log(err); 
         res.status(500).send({massage:err});
