@@ -34,7 +34,7 @@ app.get('/classes',  (req, res) => {
   })
 
 
-  app.get('/classes/:_id', (req,res)=>{
+  app.get('/classes/:id', (req,res)=>{
     const key = req.params.key;
     
     client = new MongoClient(uri, { useNewUrlParser: true });
